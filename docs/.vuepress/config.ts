@@ -13,14 +13,14 @@ export default defineUserConfig({
 
   locales: {
     '/': {
-      lang: 'en-US',
-      title: 'Docs',
-      description: 'A docs for CsonDB',
-    },
-    '/zh/': {
       lang: 'zh-CN',
       title: '文档',
       description: 'CsonDB 的文档',
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'Docs',
+      description: 'A docs for CsonDB',
     },
   },
 
@@ -29,7 +29,7 @@ export default defineUserConfig({
   plugins: [
     searchPlugin({
       locales: {
-        '/zh/': {
+        '/': {
           placeholder: '搜索',
         },
       },

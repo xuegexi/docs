@@ -1,12 +1,12 @@
-import { sidebar } from "vuepress-theme-hope";
+import { sidebar } from 'vuepress-theme-hope';
 
-export const enSidebar = sidebar({
-  "/": [
+export const zhSidebar = sidebar({
+  '/en/': [
     {
-      text: "Docs",
-      icon: "note",
-      prefix: "guide/",
-      children: "structure",
-    }
+      text: 'Docs',
+      icon: 'note',
+      prefix: 'guide/',
+      children: 'structure',
+    },
   ],
 });

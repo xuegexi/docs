@@ -29,18 +29,18 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: 'Default footer',
+      footer: '默认页脚',
 
       displayFooter: true,
     },
-    '/zh/': {
+    '/en/': {
       // navbar
       navbar: zhNavbar,
 
       // sidebar
       sidebar: zhSidebar,
 
-      footer: '默认页脚',
+      footer: 'Default footer',
 
       displayFooter: true,
     },
@@ -49,7 +49,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       '/demo/encrypt.html': ['1234'],
-      '/zh/demo/encrypt.html': ['1234'],
+      '/en/demo/encrypt.html': ['1234'],
     },
   },
 
