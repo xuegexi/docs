@@ -107,7 +107,7 @@
                 <a
                   target="_blank"
                   rel="noopener"
-                  href="https://www.cnosdb.com/blog/category/工程师有话说/"
+                  href="https://cn.cnosdb.com//blog/category/%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%9C%89%E8%AF%9D%E8%AF%B4/"
                   >工程师有话说</a
                 >
               </li>
