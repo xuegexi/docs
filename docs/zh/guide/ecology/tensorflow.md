@@ -1,9 +1,9 @@
 ---
-title: Tensorflow
+title: TensorFlow
 order: 5
 ---
 
-## 使用 CnosDB 与 Tensorflow 进行时间序列预测
+## 使用 CnosDB 与 TensorFlow 进行时间序列预测
 
 ### 从三体运动到太阳黑子变化预测
 
@@ -32,7 +32,7 @@ order: 5
 
 我们主要分析和探索：1749至2023年，月均太阳黑子数(monthly mean sunspot number，MSSN)变化情况。
 
-### CnosDB 数据导入
+### 数据导入
 
 将 MSSN 数据 csv 格式文件`SN_m_tot_V2.0.csv`（https://www.sidc.be/silso/infosnmtot） 下载到本地。
 
@@ -174,14 +174,14 @@ print(conn.list_table())
 conn.write_dataframe(df, "sunspot", ['date', 'mssn'])
 ```
 
-### CnoDB 读取数据，并使用 TensorFlow 复现 1DConv+LSTM 网络，预测太阳黑子变化
+### 读取数据
 
 参考论文：[程术, 石耀霖, and 张怀. "基于神经网络预测太阳黑子变化." (2022).
 ](http://journal.ucas.ac.cn/CN/10.7523/j.ucas.2021.0068)
 
 ![](../../../source/_static/img/MSSN.png)
 
-#### 首先使用 CnosDB 读取数据
+#### 使用 CnosDB 读取数据
 ```python
 df = pd.read_sql("select * from sunspot;", conn)
 
@@ -190,7 +190,7 @@ print(df.head())
 
 ![](../../../source/_static/img/cnosdb_dataframe.png)
 
-#### 将数据集划分为训练集和测试集
+### 将数据集划分为训练集和测试集
 
 ```python
 import numpy as np
@@ -245,7 +245,7 @@ tensor_train_dataset = ts_data_generator(tensor_train_data, WINDOW_SIZE, BATCH_S
 tensor_test_dataset = ts_data_generator(tensor_test_data, WINDOW_SIZE, BATCH_SIZE, SHUFFLE_BUFFER)
 ```
 
-#### 使用 tf.keras 模块定义 1DConv+LSTM 神经网络模型
+### 定义 1DConv+LSTM 神经网络模型
 ```python
 model = tf.keras.models.Sequential([
                             tf.keras.layers.Conv1D(filters=128, kernel_size=3, strides=1, input_shape=[None, 1]),
@@ -282,7 +282,7 @@ plt.show()
 
 ![](../../../source/_static/img/model_resault.png)
 
-#### 使用训练好的模型预测 MSSN
+### 使用训练好的模型预测 MSSN
 
 
 ```python
@@ -305,7 +305,7 @@ print(error)
 24.676455
 ```
 
-#### 与真实值对比的可视化结果
+### 与真实值对比的可视化结果
 
 ```python
 plt.plot(test_data)
