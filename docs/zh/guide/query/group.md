@@ -1,6 +1,6 @@
 ---
 title: 分组操作
-order: 7
+order: 9
 ---
 
 ## GROUP BY 子句

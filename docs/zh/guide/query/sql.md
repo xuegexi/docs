@@ -535,24 +535,6 @@ SELECT * FROM air ORDER BY station, temperature;
     | 2022-01-28 13:30:00 | XiaoMaiDao  | 65         | 79          | 77       |
     +---------------------+-------------+------------+-------------+----------+
 
-## **IN**
-
-IN 操作符允许您在 WHERE 子句中规定多个值。
-
-**示例**：
-```sql
-SELECT station, temperature, visibility FROM air WHERE temperature  IN (68, 69);
-```
-    +-------------+-------------+------------+
-    | station     | temperature | visibility |
-    +-------------+-------------+------------+
-    | XiaoMaiDao  | 69          | 56         |
-    | LianYunGang | 69          | 78         |
-    +-------------+-------------+------------+
-
-**注意**：
-
-IN 列表暂不支持表达式，暂时只支持常量
 
 
 ## **SHOW**

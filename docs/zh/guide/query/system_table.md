@@ -1,6 +1,6 @@
 ---
 title: 系统视图
-order: 12
+order: 14
 ---
 
 CnosDB 提供了系统视图用来查看集群状态和集群Schema信息
