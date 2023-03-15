@@ -10,13 +10,13 @@ order: 1
 
 ## Data节点监控指标
 
-### DISK_STORAGE
+### VNODE_DISK_STORAGE
 #### 名称
-disk_storage
+vnode_disk_storage
 #### 种类
 Gauge
 #### 描述
-vnode_id 占据的磁盘数
+vnode 占据的磁盘大小
 
 #### 标签
 
@@ -28,11 +28,28 @@ vnode_id 占据的磁盘数
 | VNODE_ID | vnode 的 ID      |
 | VALUE    | vnode 所占磁盘大小    |
 
+### VNODE_CACHE_SIZE
+#### 名称
+vnode_cache_size
+#### 种类
+Gauge
+#### 描述
+vnode 占据的内存大小
 
-### DATA_IN
+#### 标签
+
+| 字段       | 描述            |
+|----------|---------------|
+| DATABASE | vnode 所属的数据库  |
+| NODE_ID  | data节点的ID     |
+| TENANT   | vnode 所属的租户名称 |
+| VNODE_ID | vnode 的 ID    |
+| VALUE    | vnode 所占内存大小  |
+
+### COORD_DATA_IN
 
 #### 名称
-data_in
+coord_data_in
 #### 种类
 Count
 #### 描述
@@ -50,7 +67,7 @@ Count
 
 ### DATA_OUT
 #### 名称
-data_out
+coord_data_out
 #### 种类
 Count
 #### 描述
@@ -65,10 +82,10 @@ Count
 | TENANT   | Database 所属的租户名称 |
 | VALUE    | 读取流量的总大小单位Bytes         |
 
-### QUERIES
+### USER_QUERIES
 
 #### 名称
-queries
+user_queries
 #### 种类
 Count
 #### 描述
@@ -85,10 +102,10 @@ Count
 | USER     | 用户名称             |
 | VALUE    | 用户查询次数           |
 
-### WRITES
+### USER_WRITES
 
 #### 名称
-writes
+user_writes
 #### 种类
 Count
 #### 描述
