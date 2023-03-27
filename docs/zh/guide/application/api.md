@@ -19,7 +19,8 @@ Authorization: BASIC
 
 **请求参数**
 
-- db：数据库名字
+- tenant: 租户名（可选，不指定参数时为默认租户 cnosdb）
+- db：数据库名 （可选，不指定参数时为默认数据库 public）
 
 **请求体**
 - 行协议：有关行协议的具体内容可以看[这里](https://docs.influxdata.com/influxdb/v1.8/write_protocols/line_protocol_tutorial/)
@@ -68,7 +69,9 @@ date: Sat, 08 Oct 2022 07:03:33 GMT
 
 **请求参数**
 
-- db
+- tenant 租户名（可选，不指定时默认为cnosdb）
+
+- db 数据库名（可选，不指定时默认为public）
     根据当前请求上下文的默认数据库。
 - chunked
     是否流式返回结果数据。默认为false。
