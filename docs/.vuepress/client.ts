@@ -11,7 +11,6 @@ export default defineClientConfig({
     })
 
     router.afterEach((to) => {
-      console.log('after navigation')
     })
   },
 })

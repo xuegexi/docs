@@ -17,6 +17,7 @@ export default defineUserConfig({
       'script',
       {},
       `
+      window.onload= function() {
         (function() {
           var logoEleLight = document.querySelector(".navbar-left a.brand .logo.light") ;
           var logoEleDark = document.querySelector(".navbar-left a.brand .logo.dark") ;
@@ -31,6 +32,7 @@ export default defineUserConfig({
             window.location.href = 'https://www.cnosdb.com'
           })
         })();
+      }
       `,
     ],
     [
@@ -46,13 +48,13 @@ export default defineUserConfig({
         })();
       `,
     ],
-    [
-      'script',
-      {
-        defer: true,
-        src: path.resolve(__dirname, './components/jQuery.js'),
-      },
-    ],
+    // [
+    //   'script',
+    //   {
+    //     defer: true,
+    //     src: path.resolve(__dirname, './components/jQuery.js'),
+    //   },
+    // ],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
 
