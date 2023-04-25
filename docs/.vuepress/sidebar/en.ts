@@ -1,7 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export const enSidebar = sidebar({
-  "/": [
+  "/en/v2.2.0/": [
     "README.md",
     {
       text: "Get Started",
