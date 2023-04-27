@@ -52,7 +52,7 @@ export default defineUserConfig({
   ],
 
   locales: {
-    '/': {
+    '/en/': {
       lang: 'en-US',
       title: 'Docs',
       description: 'A docs for CnosDB',
